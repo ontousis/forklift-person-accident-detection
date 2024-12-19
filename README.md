@@ -25,7 +25,7 @@ tracking_rescale: 6                                    #downscaling factor for p
 
 ### Included Files
 
-Tn this repository there is the python source code and the config folder, which contains the file with the parameters mentioned above. A file with the trained yolov8n model used for object detection is also included. In [this](https://drive.google.com/file/d/1edCS6Vn9s44I6w-CPMs48AbWSHW6IySP/view?usp=sharing) link there is a .tar file that can be used to load the application's docker image like this:
+Tn this repository there is the python source code and the config folder, which contains the file with the parameters mentioned above. A file with the trained yolov8n model used for object detection is also included (in .tflite format, required for inference using the TPU accelerator). In [this](https://drive.google.com/file/d/1edCS6Vn9s44I6w-CPMs48AbWSHW6IySP/view?usp=sharing) link there is a .tar file that can be used to load the application's docker image like this:
 ```
 sudo docker load < forklifts_humans.tar
 ```
