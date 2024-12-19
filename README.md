@@ -14,12 +14,12 @@ model_path: "best_full_integer_quant_edgetpu.tflite"   #path to the trained mode
 cam_path: 0                                            #path for the usb camera (0 by default)
 det_interval: 2000                                     #time between detections in ms-only tracking is performed during that time
 conf_threshold: 0.2                                    #confidence threshold for the detection model
-vert_d_forklift_front_perc: 0.5
-vert_d_human_front_perc: 0.4
+vert_d_forklift_front_perc: 0.5                        #vertical distance between the centers of the boxes as a percentage of forklift width (forklift in front)
+vert_d_human_front_perc: 0.4                           #vertical distance between the centers of the boxes as a percentage of forklift width (person in front)
 cond1_ioh_thr: 0.3                                     #fraction of person bbox intersecing with forklift bbox
-cond2_hor_dist_perc: 1.5
-speed_tot_height_perc: 0.2
-speed_fork_height_perc: 0.15
+cond2_hor_dist_perc: 1.5                               #horizontal distance between the centers of the boxes as a percentage of forklift width
+speed_tot_height_perc: 0.2                             #relative speed of the boxes (foklift_heights/sec)
+speed_fork_height_perc: 0.15                           #forklift speed (foklift_heights/sec)
 tracking_rescale: 6                                    #rescaling factor for performing tracking in large images
 ```
 
