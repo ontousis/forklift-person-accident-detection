@@ -1,0 +1,11 @@
+model_path: "best_full_integer_quant_edgetpu.tflite"
+cam_path: 0
+det_interval: 2000 #time between detections in ms-only tracking is performed during that time
+conf_threshold: 0.2
+vert_d_forklift_front_perc: 0.5
+vert_d_human_front_perc: 0.4
+cond1_ioh_thr: 0.3 #fraction of person bbox intersecing with forklift bbox
+cond2_hor_dist_perc: 1.5
+speed_tot_height_perc: 0.2
+speed_fork_height_perc: 0.15
+tracking_rescale: 6
