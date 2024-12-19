@@ -20,7 +20,7 @@ cond1_ioh_thr: 0.3                                     #fraction of person bbox 
 cond2_hor_dist_perc: 1.5                               #horizontal distance between the centers of the boxes as a percentage of forklift width
 speed_tot_height_perc: 0.2                             #relative speed of the boxes (foklift_heights/sec)
 speed_fork_height_perc: 0.15                           #forklift speed (foklift_heights/sec)
-tracking_rescale: 6                                    #rescaling factor for performing tracking in large images
+tracking_rescale: 6                                    #downscaling factor for performing tracking in large images
 ```
 
 ### Included Files
