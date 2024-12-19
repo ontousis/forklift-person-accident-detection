@@ -1,6 +1,6 @@
 # forklift-person-accident-detection
 
-This is an implementation of a system capable of detecting forklifts and people, estimate if a situation involving them is dangerous (the forklift moving towards the person at a significant speed at a close distance) and notifying accordingly.
+This is an implementation of a system capable of detecting forklifts and people, estimating if a situation involving them is dangerous (the forklift moving towards the person at a significant speed at a close distance) and notifying accordingly.
 
 ### Requirements
 
