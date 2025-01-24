@@ -6,6 +6,7 @@ import os
 from ultralytics import YOLO
 import yaml
 import lgpio
+import requests
 
 def iou_ltrb(ltrb1,ltrb2):
 	xi_lt=max(ltrb1[0],ltrb2[0])
@@ -116,6 +117,7 @@ p4=conf["cond2_hor_dist_perc"]
 p5=conf["speed_tot_height_perc"]
 p6=conf["speed_fork_height_perc"]
 tracking_rescale=conf["tracking_rescale"]
+backend_url=conf["backend_url"]
 
 h = lgpio.gpiochip_open(0)
 lgpio.gpio_claim_output(h, 17)
@@ -184,5 +186,9 @@ while 1:
 							d=estimate_danger(ltrb_forklift,ltrb_person,idx,idx1,positions,p1,p2,p3,p4,p5,p6)
 							if d:
 								indicate_danger()
+								t=time.time_ns()//1000000
+								cv2.imwrite("potential_danger"+str(t)+".jpg",img_r)
+        							requests.post(backend_url,files={'image':open("potential_danger"+str(t)+".jpg","rb")},data={'time':time.strftime("%d_%m_%Y_%H_%M_%S")})
+        							os.remove("potential_danger"+str(t)+".jpg")
 						idx1+=1
 		idx+=1
