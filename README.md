@@ -4,7 +4,7 @@ This is an implementation of a system capable of detecting forklifts and people,
 
 ### Requirements
 
-The system was designed to be run on a raspberry pi 4b or later, running ubuntu 24.04. A usb camera is assumed to provide the image input. A Google Coral TPU Accelerator is also required for the object detection process. The "danger" indication is provided as a 2 second high output at GPIO pin 17.
+The system was designed to be run on a raspberry pi 4b or later, running ubuntu 24.04. A usb camera is assumed to provide the image input. A Google Coral TPU Accelerator is also required for the object detection process. The "danger" indication is provided as a 2 second high output at GPIO pin 17. Frames in which a potentially dangerous situation is detected are sent in a POST request, the body of which also contains the corresponding date/time information.
 
 ### Parameter Configuration
 The necessary parameters can be configured through the config.yaml file:
@@ -21,6 +21,7 @@ cond2_hor_dist_perc: 1.5                               #horizontal distance betw
 speed_tot_height_perc: 0.2                             #relative speed of the boxes (foklift_heights/sec)
 speed_fork_height_perc: 0.15                           #forklift speed (foklift_heights/sec)
 tracking_rescale: 6                                    #downscaling factor for performing tracking in large images
+backend_url: "http://192.168.1.5:5000/upload"          #The url where the POST request is sent
 ```
 
 ### Included Files
