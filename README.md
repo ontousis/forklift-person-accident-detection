@@ -31,6 +31,6 @@ sudo docker load < forklifts_humans.tar
 ```
 The resulting image can be run as shown here:
 ```
-sudo docker run --privileged --device /dev/bus/usb -v $(pwd)/config:/config forklifts_humans
+sudo docker run --privileged --network="host" --device /dev/bus/usb -v $(pwd)/config:/config forklifts_humans
 ```
 $(pwd)/config assumes that the config folder in which the configuration file is located is inside the directory where the above command is executed. Of course the path can be adapted.
