@@ -26,7 +26,7 @@ backend_url: "http://192.168.1.5:5000/upload"          #The url where the POST r
 
 ### Included Files
 
-Tn this repository there is the python source code and the config folder, which contains the file with the parameters mentioned above. A file with the trained yolov8n model used for object detection is also included (in .tflite format, required for inference using the TPU accelerator). In [this](https://drive.google.com/file/d/1Vza6SDgDCgqU1YY4Vch6bwchMbgkFeEB/view?usp=sharing) link there is a .tar file that can be used to load the application's docker image like this:
+Tn this repository there is the python source code and the config folder, which contains the file with the parameters mentioned above. A file with the trained yolov8n model used for object detection is also included (in .tflite format, required for inference using the TPU accelerator). In [this](https://drive.google.com/file/d/1Kb6qXy_Vj5CcxyUg14W_B9L_NGE30O37/view?usp=sharing) link there is a .tar file that can be used to load the application's docker image like this:
 ```
 sudo docker load < forklifts_humans.tar
 ```
