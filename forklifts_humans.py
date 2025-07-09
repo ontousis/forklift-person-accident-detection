@@ -174,7 +174,6 @@ while 1:
 		else: # Only tracking
 			if success:
 				bbox=tracked_boxes[idx]
-				draw_ltwh_box(bbox,img_r,color=(0,0,255))
 				if category==0:
 					ltrb_forklift=[int(bbox[0]),int(bbox[1]),int(bbox[0])+int(bbox[2]),int(bbox[1])+int(bbox[3])]
 					idx1=0
@@ -185,6 +184,7 @@ while 1:
 							ltrb_person=[int(bbox1[0]),int(bbox1[1]),int(bbox1[0])+int(bbox1[2]),int(bbox1[1])+int(bbox1[3])]
 							d=estimate_danger(ltrb_forklift,ltrb_person,idx,idx1,positions,p1,p2,p3,p4,p5,p6)
 							if d:
+								draw_ltwh_box(bbox,img_r,color=(0,0,255))
 								indicate_danger()
 								t=time.time_ns()//1000000
 								cv2.imwrite("potential_danger"+str(t)+".jpg",img_r)
