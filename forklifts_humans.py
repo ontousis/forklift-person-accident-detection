@@ -174,7 +174,7 @@ while 1:
 		else: # Only tracking
 			if success:
 				bbox=tracked_boxes[idx]
-				#draw_ltwh_box(bbox,img_r,color=(0,0,255))
+				draw_ltwh_box(bbox,img_r,color=(0,0,255))
 				if category==0:
 					ltrb_forklift=[int(bbox[0]),int(bbox[1]),int(bbox[0])+int(bbox[2]),int(bbox[1])+int(bbox[3])]
 					idx1=0
