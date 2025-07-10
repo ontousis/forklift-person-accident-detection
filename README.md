@@ -28,10 +28,10 @@ backend_url: "http://192.168.1.5:5000/upload"          #The url where the POST r
 
 Tn this repository there is the python source code and the config folder, which contains the file with the parameters mentioned above. A file with the trained yolov8n model used for object detection is also included (in .tflite format, required for inference using the TPU accelerator). In [this](https://drive.google.com/file/d/1uEDGV6e8hXyw3DrrUl7ep-HgZRZcWPdS/view?usp=sharing) link there is a .tar file that can be used to load the application's docker image like this:
 ```
-sudo docker load < forklifts_humans.tar
+sudo docker load < forklifts_humans_10_7_25.tar
 ```
 The resulting image can be run as shown here:
 ```
-sudo docker run --privileged --network="host" --device /dev/bus/usb -v $(pwd)/config:/config forklifts_humans
+sudo docker run --privileged --network="host" --device /dev/bus/usb -v $(pwd)/config:/config forklifts_humans_10_7_25
 ```
 $(pwd)/config assumes that the config folder in which the configuration file is located is inside the directory where the above command is executed. Of course the path can be adapted.
