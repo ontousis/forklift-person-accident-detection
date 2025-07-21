@@ -9,3 +9,4 @@ cond2_hor_dist_perc: 1.5
 speed_tot_height_perc: 0.2
 speed_fork_height_perc: 0.15
 tracking_rescale: 6
+backend_url: "http://192.168.1.5:5000/upload"  #The url where the POST request is sent
