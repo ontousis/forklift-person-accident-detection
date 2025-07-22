@@ -188,7 +188,7 @@ while 1:
 								indicate_danger()
 								t=time.time_ns()//1000000
 								cv2.imwrite("potential_danger"+str(t)+".jpg",img_r)
-        							requests.post(backend_url,files={'image':open("potential_danger"+str(t)+".jpg","rb")},data={'time':time.strftime("%d_%m_%Y_%H_%M_%S")})
-        							os.remove("potential_danger"+str(t)+".jpg")
+								requests.post(backend_url,files={'image':open("potential_danger"+str(t)+".jpg","rb")},data={'time':time.strftime("%d_%m_%Y_%H_%M_%S")})
+								os.remove("potential_danger"+str(t)+".jpg")
 						idx1+=1
 		idx+=1
